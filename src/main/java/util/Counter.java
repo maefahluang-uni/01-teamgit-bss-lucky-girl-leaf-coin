@@ -40,13 +40,66 @@ public class Counter {
 
 	// TODO: dev2- method for increment to closest prime number
 	public void incrementToPrime() {
-		_ctr = -99;
-	}
+		   // Start with the current value of _ctr
+		   int currentNumber = _ctr;
 
+		   // Increment to the next number
+		   currentNumber++;
+	   
+		   // Keep incrementing until a prime number is found
+		   while (!isPrime(currentNumber)) {
+			   currentNumber++;
+		   }
+	   
+		   // Update the value of _ctr to the closest prime number
+		   _ctr = currentNumber;
+	   }
+	   
+	   // Helper method to check if a number is prime
+	   private boolean isPrime(int num) {
+		   if (num < 2) {
+			   return false;
+		   }
+	   
+		   for (int i = 2; i <= Math.sqrt(num); i++) {
+			   if (num % i == 0) {
+				   return false;
+			   }
+		   }
+	   
+		   return true;
+	   }
 	// TODO: dev2- method for decrement to closest prime number
 	public void decrementToPrime() {
-		_ctr = -99;
-	}
+	 // Start with the current value of _ctr
+	 int currentNumber = _ctr;
+
+	 // Decrement to the previous number
+	 currentNumber--;
+ 
+	 // Keep decrementing until a prime number is found
+	 while (!isPrime(currentNumber)) {
+		 currentNumber--;
+	 }
+ 
+	 // Update the value of _ctr to the closest prime number
+	 _ctr = currentNumber;
+ }
+ 
+ // Helper method to check if a number is prime
+ private boolean isPrime(int num) {
+	 if (num < 2) {
+		 return false;
+	 }
+ 
+	 for (int i = 2; i <= Math.sqrt(num); i++) {
+		 if (num % i == 0) {
+			 return false;
+		 }
+	 }
+ 
+	 return true;
+ }
 
 	// TODO: dev3- count the frequency of word in sentence,
 	// refactor source code from dev1 and dev2
